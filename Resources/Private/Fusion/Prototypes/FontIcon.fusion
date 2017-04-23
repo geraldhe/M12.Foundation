@@ -1,6 +1,6 @@
 # There are two separate objects for font icon: 
 # 1. Abstract FontIconAbstract, which is rendered inside another objects (e.g. button).
-#    See TYPO3.Neos:Content.fontIcon.
+#    See Neos.Neos:Content.fontIcon.
 #    This icon is only rendered for nodes which have `M12.Foundation:AbstractFontIcon`
 #    set in `superTypes` and it's a simplified version of regular FontIcon.
 # 2. Full-fledged FontIcon, which is a regular node type, available to insert 
@@ -9,7 +9,7 @@
 #    e.g. ability to define all common properties like floats, show on X device,
 #    tooltip, custom html attributes etc.
 
-prototype(M12.Foundation:FontIconAbstract) < prototype(TYPO3.TypoScript:Template) {
+prototype(M12.Foundation:FontIconAbstract) < prototype(Neos.Fusion:Template) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/FontIcon.html'
 	sectionName = 'abstractFontIcon'
 	node = ${node}

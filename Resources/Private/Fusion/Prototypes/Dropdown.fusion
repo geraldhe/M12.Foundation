@@ -32,5 +32,5 @@ prototype(M12.Foundation:DropdownContent) < prototype(M12.Foundation:DropdownAbs
 		content = ${q(node).property('dropdownPadding') ? 'content' : null}
 	}
 
-	content = TYPO3.Neos:ContentCollectionRenderer
+	content = Neos.Neos:ContentCollectionRenderer
 }

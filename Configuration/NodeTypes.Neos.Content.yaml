@@ -1,4 +1,4 @@
-'TYPO3.Neos.NodeTypes:LinkMixin':
+'Neos.Neos:LinkMixin':
   abstract: TRUE
   properties:
     linkTarget:
@@ -8,7 +8,7 @@
         reloadIfChanged: TRUE
         inspector:
           position: 301
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Default'
             allowEmpty: TRUE
@@ -16,7 +16,7 @@
               _blank:
                 label: 'New window'
 
-'TYPO3.Neos.NodeTypes:ImageMixin':
+'Neos.Neos:ImageMixin':
   superTypes:
     'M12.Foundation:AbstractFontIcon': TRUE
     'M12.Foundation:AbstractRadiusStyle': TRUE
@@ -28,10 +28,10 @@
             features:
               resize: TRUE
 
-'TYPO3.Neos.NodeTypes:ContentImageMixin':
+'Neos.Neos:ContentImageMixin':
   superTypes:
     # We have Foundation align classes, so we don't need it here
-    'TYPO3.Neos.NodeTypes:ImageAlignmentMixin': FALSE
+    'Neos.Neos:ImageAlignmentMixin': FALSE
     'M12.Foundation:AbstractBackgroundImage': TRUE
   ui:
     inspector:
@@ -66,7 +66,7 @@
           group: 'clickToZoom'
           position: 10
     clickToZoomImage:
-      type: TYPO3\Media\Domain\Model\ImageInterface
+      type: Neos\Media\Domain\Model\ImageInterface
       ui:
         label: 'Override image for click-to-zoom'
         inspector:
@@ -90,7 +90,7 @@
           editorOptions:
             placeholder: 'No caption'
 
-'TYPO3.Neos:Hidable':
+'Neos.Neos:Hidable':
   properties:
     _hidden:
       ui:
@@ -98,9 +98,9 @@
           message: 'Do not render this element at all. It will be only available in the Neos back-end.'
 
 
-# Move some Neos NodeTypes to non-existing group
+# Move some Neos to non-existing group
 # so they're not visible by default.
-'TYPO3.Neos.NodeTypes:Menu':
+'Neos.Neos:Menu':
   superTypes:
     'M12.Foundation:AbstractNodeTitle': TRUE
   ui:
@@ -123,15 +123,15 @@
           message: "When set, only these pages will be included in the menu."
 
 
-'TYPO3.Neos.NodeTypes:TwoColumn':
+'Neos.Neos:TwoColumn':
   abstract: true
-'TYPO3.Neos.NodeTypes:ThreeColumn':
+'Neos.Neos:ThreeColumn':
   abstract: true
-'TYPO3.Neos.NodeTypes:FourColumn':
+'Neos.Neos:FourColumn':
   abstract: true
 
 
-'TYPO3.Neos.NodeTypes:Headline':
+'Neos.Neos:Headline':
   superTypes:
     'M12.Foundation:AbstractSectionIdMagellan': TRUE
     'M12.Foundation:AbstractDevCustomTag': TRUE
@@ -148,7 +148,7 @@
             'h5': TRUE
             'h6': TRUE
 
-'TYPO3.Neos.NodeTypes:Text':
+'Neos.Neos:Text':
   superTypes:
     'M12.Foundation:AbstractDevCustomTag': TRUE
     'M12.Foundation:AbstractFontIcon': TRUE
@@ -165,7 +165,7 @@
             h5: TRUE
             h6: TRUE
 
-'TYPO3.Neos.NodeTypes:Html':
+'Neos.Neos:Html':
   superTypes:
     'M12.Foundation:AbstractSectionIdMagellan': TRUE
     'M12.Foundation:AbstractDevCustomTag': TRUE
@@ -179,7 +179,7 @@
         **Hint:** you can also include HTML/CSS/JS using page settings, in the <a class="icon-code"></a> tab.
 
 
-'TYPO3.Neos.NodeTypes:ContentReferences':
+'Neos.Neos:ContentReferences':
   superTypes:
     'M12.Foundation:AbstractNodeTitle': TRUE
     'M12.Foundation:AbstractBackgroundImage': TRUE
@@ -209,7 +209,7 @@
             **Hint:** to find a particular content easier, you can set its name to something meaningful. You can do that by setting _Change name_ field in the <a class="icon-cog"></a> tab.
 
 
-'TYPO3.Neos:ContentCollection':
+'Neos.Neos:ContentCollection':
   constraints:
     nodeTypes:
       'M12.Foundation:GridColumn': FALSE # M12.Foundation:GridColumn makes sense only inside M12.Foundation:GridRow*

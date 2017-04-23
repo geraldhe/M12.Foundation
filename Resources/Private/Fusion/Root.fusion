@@ -1,7 +1,7 @@
 # Custom TypoScript objects
-include: TypoScriptObjects/*
+include: FusionObjects/*
 
-# TYPO3 Neos objects amends
+# Neos.Neos objects amends
 include: Neos/*
 
 # M12.Foundation prototypes

@@ -1,10 +1,11 @@
 <?php
+// The object "TYPO3\TYPO3CR\Domain\Service\NodeTypeManager" which was specified as a property in the object configuration of object "M12\Foundation\Node\NodeConfigurator" (automatically registered class) does not exist.
 namespace M12\Foundation\Node;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
-use TYPO3\TYPO3CR\Domain\Model\NodeType;
-use TYPO3\TYPO3CR\Exception\NodeConfigurationException;
+use Neos\Flow\Annotations as Flow;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\ContentRepository\Domain\Model\NodeType;
+use Neos\ContentRepository\Exception\NodeConfigurationException;
 
 /**
  * Class NodeConfigurator listens to `afterNodeCreate` from CR
@@ -17,7 +18,7 @@ class NodeConfigurator
 
     /**
      * @Flow\Inject
-     * @var \TYPO3\TYPO3CR\Domain\Service\NodeTypeManager
+     * @var \Neos\ContentRepository\Domain\Service\NodeTypeManager
      */
     protected $nodeTypeManager;
 
@@ -80,7 +81,7 @@ class NodeConfigurator
         $config = $this->getAssistanceConfigForNodeType($nodeType->getName());
 
         switch ($nodeType->getName()) {
-            case 'TYPO3.Neos.NodeTypes:Image':
+            case 'Neos.Neos.NodeTypes:Image':
                 $this->configureImage($node, $nodeType, $config);
                 break;
 

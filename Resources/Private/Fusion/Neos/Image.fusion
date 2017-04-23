@@ -1,10 +1,10 @@
 # Image TS Object
-prototype(TYPO3.Neos.NodeTypes:Image) {
+prototype(Neos.Neos.NodeTypes:Image) {
 	parentNode = ${q(node).parent().get()}
 	parentIsBlockGrid = ${q(this.parentNode).property('_nodeType.name') == 'M12.Foundation:BlockGrid'}
 
 	# Override/set link to image, so it can be shown in modal (reveal modal or lightbox)
-	link.@process.clickToZoomLink = TYPO3.Neos:ImageUri {
+	link.@process.clickToZoomLink = Neos.Neos:ImageUri {
 		@if.clickToZoom = ${q(node).property('clickToZoom') == true}
 		asset = ${q(node).property('clickToZoomImage') ? q(node).property('clickToZoomImage') : q(q(node).property('image')).property('originalAsset')}
 		maximumWidth = 2560
@@ -21,14 +21,14 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
 	@override.isModal = ${this.isModal}
 
 	# Modal content with `click-to-zoom` image.
-	modalContent = TYPO3.TypoScript:Tag {
+	modalContent = Neos.Fusion:Tag {
 		@if.isModal = ${isModal}
 		attributes.id = ${'modal-image-' + q(node).property('_identifier')}
 		attributes.data-reveal = ''
 		attributes.class = 'reveal-modal reveal-modal--image xlarge text-center'
 
-		content = TYPO3.TypoScript:Array
-		content.image = TYPO3.Neos:ImageTag {
+		content = Neos.Fusion:Array
+		content.image = Neos.Neos:ImageTag {
 			@if.imagePresent = ${q(node).property('clickToZoomImage') || q(q(node).property('image'))}
 			# If clickToZoomImage has been provided, simply use it.
 			# Otherwise use original `image`.
@@ -48,7 +48,7 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
 			attributes.class = 'th'
 		}
 		# Render caption: first from `clickToZoomCaption`, then default image `caption`.
-		content.caption = TYPO3.TypoScript:Tag {
+		content.caption = Neos.Fusion:Tag {
 			@if.hasCaption = ${q(node).property('clickToZoomCaption') || q(node).property('caption')}
 			tagName = 'figcaption'
 			content = ${q(node).property('clickToZoomCaption') ? q(node).property('clickToZoomCaption') : (q(node).property('caption') ? q(node).property('caption') : q(q(node).property('image')).property('caption') )}
@@ -56,14 +56,14 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
 		content.closeBtn = '<a class="close-reveal-modal">×</a>'
 	}
 
-	imageAttributes = TYPO3.TypoScript:Attributes
+	imageAttributes = Neos.Fusion:Attributes
 	imageAttributes.data-caption = ${q(node).property('clickToZoomCaption') ? q(node).property('clickToZoomCaption') : null}
 
 	# Attributes added to the <a> link wrapping the image
-	linkAttributes = TYPO3.TypoScript:Attributes
+	linkAttributes = Neos.Fusion:Attributes
 	linkAttributes.target = ${q(node).property('linkTarget') ? q(node).property('linkTarget') : null}
 	linkAttributes.href = ${url && node.context.workspace.name == 'live' ? url : null}
-	linkAttributes.class = TYPO3.TypoScript:RawArray
+	linkAttributes.class = Neos.Fusion:RawArray
 	linkAttributes.class.@process.nullify = ${Array.join(value,'') ? value : null}
 	# Add visual border around image if thumbnail is on
 	linkAttributes.class.th = ${q(node).property('classThumbnail') ? 'th' : null}
@@ -90,7 +90,7 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
 	figureAttributes = ${this.attributes}
 }
 
-prototype(TYPO3.Neos.NodeTypes:TextWithImage) {
+prototype(Neos.Neos.NodeTypes:TextWithImage) {
 	figureAttributes >
-	figureAttributes = TYPO3.TypoScript:Attributes
+	figureAttributes = Neos.Fusion:Attributes
 }

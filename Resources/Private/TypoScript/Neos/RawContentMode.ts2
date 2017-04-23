@@ -1,7 +1,0 @@
-# TYPO3.Neos:RawContent is a renderer for 'rawContent' page.
-# While in this context, inline styles should not be displayed.
-prototype(TYPO3.Neos:RawContent) {
-	prototype(TYPO3.Neos:Content) {
-		attributes.style >
-	}
-}

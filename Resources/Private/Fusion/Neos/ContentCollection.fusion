@@ -1,4 +1,4 @@
-prototype(TYPO3.Neos:ContentCollection) {
+prototype(Neos.Neos:ContentCollection) {
 	# Due to (unknown?) reasons ContentCollection inherits 'attributes' properties
 	# set in the parent node (incl. tagName). Re-set those values
 	# so it renders default <div class="neos-contentcollection"></div> container,
@@ -14,5 +14,5 @@ prototype(TYPO3.Neos:ContentCollection) {
 
 # Don't cache nested CCs, but cache CCs inside of Content.
 # This fix can be removed when this patch is merged: https://review.typo3.org/38847
-prototype(TYPO3.Neos:Content).prototype(TYPO3.Neos:ContentCollection).@cache.mode = 'cached'
-prototype(TYPO3.Neos:ContentCollection).prototype(TYPO3.Neos:ContentCollection).@cache.mode = 'embed'
+prototype(Neos.Neos:Content).prototype(Neos.Neos:ContentCollection).@cache.mode = 'cached'
+prototype(Neos.Neos:ContentCollection).prototype(Neos.Neos:ContentCollection).@cache.mode = 'embed'

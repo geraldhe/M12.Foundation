@@ -13,7 +13,7 @@ namespace M12\Foundation\Tests\Unit\TypoScriptObjects;
 
 use TYPO3\Flow\Reflection\ObjectAccess;
 use TYPO3\Flow\Tests\UnitTestCase;
-use TYPO3\TypoScript\Core\Runtime;
+use Neos.Fusion\Core\Runtime;
 use M12\Foundation\TypoScriptObjects\AttributesImplementation;
 
 /**
@@ -28,7 +28,7 @@ class AttributesImplementationTest extends UnitTestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->mockTsRuntime = $this->getMockBuilder('TYPO3\TypoScript\Core\Runtime')->disableOriginalConstructor()->getMock();
+		$this->mockTsRuntime = $this->getMockBuilder('Neos.Fusion\Core\Runtime')->disableOriginalConstructor()->getMock();
 	}
 
 	public function attributeExamples() {
@@ -57,7 +57,7 @@ class AttributesImplementationTest extends UnitTestCase {
 			return ObjectAccess::getPropertyPath($properties, str_replace('/', '.', $relativePath));
 		}));
 
-		$typoScriptObjectName = 'TYPO3.TypoScript:Attributes';
+		$typoScriptObjectName = 'Neos.Fusion:Attributes';
 		$renderer = new AttributesImplementation($this->mockTsRuntime, $path, $typoScriptObjectName);
 		
 		if ($properties !== NULL) {

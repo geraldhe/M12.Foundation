@@ -1,7 +1,7 @@
 'M12.Foundation:Alert':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:AbstractDevCustomTag': TRUE
     'M12.Foundation:AbstractTitleTooltip': TRUE
     'M12.Foundation:AbstractRadiusRoundedStyle': TRUE
@@ -33,7 +33,7 @@
         inspector:
           group: 'options'
           position: 10
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Default'
             allowEmpty: TRUE

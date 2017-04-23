@@ -11,10 +11,10 @@ namespace M12\Foundation\NodeTypePostprocessor;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\TYPO3CR\Domain\Model\NodeType;
-use TYPO3\Flow\Configuration\ConfigurationManager;
-use TYPO3\TYPO3CR\NodeTypePostprocessor\NodeTypePostprocessorInterface;
+use Neos\Flow\Annotations as Flow;
+use Neos\ContentRepository\Domain\Model\NodeType;
+use Neos\Flow\Configuration\ConfigurationManager;
+use Neos\ContentRepository\NodeTypePostprocessor\NodeTypePostprocessorInterface;
 
 /**
  * This PostProcessor generates required grid properties.
@@ -104,7 +104,7 @@ abstract class AbstractGridNodeTypePostprocessor implements NodeTypePostprocesso
                     'inspector' => [
                         'group' => $setData['uiInspectorGroup'],
                         'position' => isset($setData['uiInspectorPosition']) ? (int)$setData['uiInspectorPosition'] : ($k + 1) * 10,
-                        'editor' => 'TYPO3.Neos/Inspector/Editors/SelectBoxEditor',
+                        'editor' => 'Neos.Neos/Inspector/Editors/SelectBoxEditor',
                         'editorOptions' => [
                             'placeholder' => 'None',
                             'multiple' => true,
@@ -185,17 +185,17 @@ abstract class AbstractGridNodeTypePostprocessor implements NodeTypePostprocesso
     protected function validateSettings()
     {
         if (false === isset(static::$SETTINGS_SECTION)) {
-            throw new \TYPO3\Neos\Exception(get_called_class() . '::$SETTINGS_SECTION needs to be defined.',
+            throw new \Neos\Neos\Exception(get_called_class() . '::$SETTINGS_SECTION needs to be defined.',
                 1396555463);
         }
 
         if (empty($this->settings['devices']) || !is_array($this->settings['devices'])) {
-            throw new \TYPO3\Neos\Exception('Sorry, `M12.Foundation.devices` settings are missing. Please check Settings.yaml file!',
+            throw new \Neos\Neos\Exception('Sorry, `M12.Foundation.devices` settings are missing. Please check Settings.yaml file!',
                 1396555463);
         }
 
         if (empty($this->settings[static::$SETTINGS_SECTION]) || !is_array($this->settings[static::$SETTINGS_SECTION])) {
-            throw new \TYPO3\Neos\Exception('Sorry, `M12.Foundation.gridSettings` settings are missing. Please check Settings.yaml file!',
+            throw new \Neos\Neos\Exception('Sorry, `M12.Foundation.gridSettings` settings are missing. Please check Settings.yaml file!',
                 1396555464);
         }
     }

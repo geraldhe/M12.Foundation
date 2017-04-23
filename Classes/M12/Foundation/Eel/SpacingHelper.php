@@ -2,9 +2,9 @@
 
 namespace M12\Foundation\Eel;
 
-use TYPO3\Flow\Annotations as Flow;
-use TYPO3\Eel\ProtectedContextAwareInterface;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
+use Neos\Flow\Annotations as Flow;
+use Neos\Eel\ProtectedContextAwareInterface;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
 
 class SpacingHelper implements ProtectedContextAwareInterface
 {

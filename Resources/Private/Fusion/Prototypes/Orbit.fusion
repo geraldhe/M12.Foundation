@@ -1,0 +1,50 @@
+prototype(M12.Foundation:Orbit) < prototype(M12.Foundation:Content) {
+	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Orbit.html'
+	sectionName = 'sliderRoot'
+
+	# attributes.data-orbit = ''
+	attributes.class = "orbit-container"
+	attributes.data-options {
+		swipe = ${q(node).property('swipe')                         ? 'swipe:true;' : 'swipe:false;'}
+		pauseOnHover = ${q(node).property('pauseOnHover')           ? 'pauseOnHover:true;' : 'pauseOnHover:false;'}
+		bullets = ${q(node).property('bullets')                     ? 'bullets:true;' : 'bullets:false;'}
+
+		timerSpeed = ${q(node).property('timerSpeed')               ? 'timerDelay:' + String.toInteger(q(node).property('timerSpeed')) + ';' : null}
+		timerOffForBackend = 'timer:false;'
+		timerOffForBackend.@if.isBackend = ${node.context.workspace.name != 'live'}
+
+
+		navigationArrows = ${q(node).property('navigationArrows')   ? 'navigation_arrows:true;' : 'navigation_arrows:false;'}
+		
+	}
+	@override.attributes = ${this.attributes}
+
+	orbitContent = Neos.Fusion:Tag {
+		tagName = 'ul'
+		attributes = ${attributes}
+
+		content = Neos.Fusion:Collection {
+			collection = ${q(node).children()}
+			itemRenderer = M12.Foundation:OrbitItem
+			itemName = 'node'
+			iterationName = 'iterator'
+		}
+		# Add additional wrapping to outer DIV, because otherwise
+		# CreateJS won't work. It requires elements of ContentCollection
+		# to be direct children of ContentCollection).
+		# TODO: Can be removed when createjs is dropped.
+		@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+	}
+	@process.wrapRemover = M12.Utils:WrapRemover
+	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
+}
+
+
+prototype(M12.Foundation:OrbitItem) < prototype(Neos.Fusion:Tag) {
+	tagName = 'li'
+	# attributes.data-orbit-slide = ${iterator.cycle}
+	attributes.class = "orbit-slide"
+
+	content = Neos.Neos:ContentCase
+	@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
+}

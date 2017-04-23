@@ -1,4 +1,4 @@
-'TYPO3.Neos:Document':
+'Neos.Neos:Document':
   properties:
     title:
       ui:
@@ -36,14 +36,14 @@
           editorOptions:
             placeholder: 'None'
       validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        'Neos.Neos/Validation/StringLengthValidator':
           minimum: 1
           maximum: 64
         regularExpression:
           regularExpression: '/^[a-z0-9\-]+$/i'
 
 
-'TYPO3.Neos.NodeTypes:Page':
+'Neos.Neos.NodeTypes:Page':
   superTypes:
     'M12.Foundation:AbstractDevBase': TRUE
     'M12.Foundation:AbstractDevCustomLook': TRUE
@@ -68,7 +68,7 @@
         inspector:
           group: 'devCode'
           position: 30 # before 'customCssCode'
-          editor: TYPO3.Neos/Inspector/Editors/CodeEditor
+          editor: Neos.Neos/Inspector/Editors/CodeEditor
           editorOptions:
             label: 'Add/edit JS code'
             highlightingMode: 'text/javascript'
@@ -86,7 +86,7 @@
             Note: do not wrap it into  
             `<style type="text/css">` tag. The system does it for you.
         inspector:
-          editor: TYPO3.Neos/Inspector/Editors/CodeEditor
+          editor: Neos.Neos/Inspector/Editors/CodeEditor
           editorOptions:
             label: 'Add/edit CSS code'
             highlightingMode: 'text/css'

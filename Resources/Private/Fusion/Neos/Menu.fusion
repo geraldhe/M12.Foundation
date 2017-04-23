@@ -1,0 +1,5 @@
+# Neos.Neos:Menu provides basic menu rendering
+#
+prototype(Neos.Neos.NodeTypes:Menu) {
+	@class = 'M12\\Foundation\\TypoScript\\MenuImplementation'
+}

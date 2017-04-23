@@ -1,7 +1,7 @@
 'M12.Foundation:BlockGrid':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:AbstractSectionIdMagellan': TRUE
     'M12.Foundation:AbstractNodeTitle': TRUE
   ui:

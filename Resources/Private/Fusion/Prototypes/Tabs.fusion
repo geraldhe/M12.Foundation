@@ -2,14 +2,15 @@ prototype(M12.Foundation:Tabs) < prototype(M12.Foundation:Content) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/NodeTypes/Tabs.html'
 	sectionName = 'tabs'
 
-	tabsNavContent = TYPO3.TypoScript:Tag {
+	tabsNavContent = Neos.Fusion:Tag {
 		tagName = 'ul'
-		attributes.data-tab = ''
-		attributes.class = TYPO3.TypoScript:RawArray {
+		attributes.data-tabs = ''
+		attributes.id = ${q(node).property('customHtmlId') ? q(node).property('customHtmlId') : ('tab-' + q(node).property('_identifier'))}
+		attributes.class = Neos.Fusion:RawArray {
 			base = 'tabs'
 			vertical = ${q(node).property('vertical') ? ' vertical' : null}
 		}
-		content = TYPO3.TypoScript:Collection {
+		content = Neos.Fusion:Collection {
 			collection = ${q(node).children('[instanceof M12.Foundation:TabItem]')}
 			itemRenderer = M12.Foundation:TabNavItem
 			itemName = 'node'
@@ -18,9 +19,10 @@ prototype(M12.Foundation:Tabs) < prototype(M12.Foundation:Content) {
 
 	# Attributes around div.tabs-content
 	extraAttributes.class.base = 'tabs-content'
+	extraAttributes.data-tabs-content = ${q(node).property('customHtmlId') ? q(node).property('customHtmlId') : ('tab-' + q(node).property('_identifier'))}
 	extraAttributes.class.vertical = ${q(node).property('vertical') ? 'vertical' : null}
 
-	tabsContent = TYPO3.TypoScript:Collection {
+	tabsContent = Neos.Fusion:Collection {
 		collection = ${q(node).children('[instanceof M12.Foundation:TabItem]')}
 		itemRenderer = M12.Foundation:TabContentItem
 		itemName = 'node'
@@ -36,8 +38,8 @@ prototype(M12.Foundation:TabNavItem) < prototype(M12.Foundation:Content) {
 
 	# Attributes for each LI element
 	attributes.class {
-		tabTitle = 'tab-title'
-		active = ${q(node).property('activeTab') ? 'active' : null}
+		tabTitle = 'tabs-title'
+		active = ${q(node).property('activeTab') ? 'is-active' : null}
 	}
 
 	title = ${q(node).property('title')}
@@ -55,10 +57,10 @@ prototype(M12.Foundation:TabContentItem) < prototype(M12.Foundation:Content) {
 	attributes.class {
 		contentcollection = 'neos-contentcollection'
 		contentcollection.@if.isBackend = ${node.context.workspace.name != 'live'}
-		base = 'content'
-		active = ${q(node).property('activeTab') ? 'active' : null}
+		base = 'tabs-panel'
+		active = ${q(node).property('activeTab') ? 'is-active' : null}
 	}
 	attributes.id = ${q(node).property('customHtmlId') ? q(node).property('customHtmlId') : ('tab-' + q(node).property('_identifier'))}
 
-	content = TYPO3.Neos:ContentCollectionRenderer
+	content = Neos.Neos:ContentCollectionRenderer
 }

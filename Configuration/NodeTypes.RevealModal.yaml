@@ -1,7 +1,7 @@
 'M12.Foundation:RevealModal':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:AbstractDevCustomTag': TRUE
     'M12.Foundation:AbstractBackgroundImage': TRUE
   ui:
@@ -35,7 +35,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'options'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               tiny:
@@ -62,7 +62,7 @@
         inspector:
           group: 'options'
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        'Neos.Neos/Validation/NotEmptyValidator': []
+        'Neos.Neos/Validation/StringLengthValidator':
           minimum: 1
           maximum: 255

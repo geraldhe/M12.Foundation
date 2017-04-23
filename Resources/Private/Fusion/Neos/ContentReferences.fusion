@@ -1,4 +1,4 @@
-prototype(TYPO3.Neos.NodeTypes:ContentReferences) {
+prototype(Neos.Neos.NodeTypes:ContentReferences) {
 	templatePath = 'resource://M12.Foundation/Private/Templates/Neos/ContentReferences.html'
 	
 	# Remove default ContentReferences wrapper

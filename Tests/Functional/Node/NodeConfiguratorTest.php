@@ -17,7 +17,7 @@ use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
 /**
  * Test case for the NodeConfiguratorTest
  */
-class NodeConfiguratorTest extends \TYPO3\Neos\Tests\Functional\AbstractNodeTest {
+class NodeConfiguratorTest extends \Neos.Neos\Tests\Functional\AbstractNodeTest {
 
 	/**
 	 * @var NodeTypeManager
@@ -35,7 +35,7 @@ class NodeConfiguratorTest extends \TYPO3\Neos\Tests\Functional\AbstractNodeTest
 		$this->nodeTypeManager = $this->objectManager->get('TYPO3\TYPO3CR\Domain\Service\NodeTypeManager');
 
 		// Get any CC from $this->node: we'll be creating there our test nodes
-		$ccNodes = $this->node->getChildNodes('TYPO3.Neos:ContentCollection');
+		$ccNodes = $this->node->getChildNodes('Neos.Neos:ContentCollection');
 		$this->rootCC = array_shift($ccNodes);
 	}
 	

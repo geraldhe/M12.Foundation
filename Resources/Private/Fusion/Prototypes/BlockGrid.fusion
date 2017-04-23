@@ -11,11 +11,11 @@ prototype(M12.Foundation:BlockGrid) < prototype(M12.Foundation:Content) {
 	attributes.data-clearing = ${q(node).property('lightboxEnabled') && node.context.workspace.name == 'live' ? '' : null}
 	@override.attributes = ${this.attributes}
 
-	blockGridContent = TYPO3.TypoScript:Tag {
+	blockGridContent = Neos.Fusion:Tag {
 		tagName = 'ul'
 		attributes = ${attributes}
 
-		content = TYPO3.Neos:ContentCollectionRenderer {
+		content = Neos.Neos:ContentCollectionRenderer {
 			iterationName = 'iterator'
 			itemName = 'node'
 			itemRenderer = M12.Foundation:BlockGridItem
@@ -25,16 +25,16 @@ prototype(M12.Foundation:BlockGrid) < prototype(M12.Foundation:Content) {
 		# CreateJS won't work. It requires elements of ContentCollection
 		# to be direct children of ContentCollection).
 		# TODO: Can be removed when createjs is dropped.
-		@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+		@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 	}
 
 	@process.wrapRemover = M12.Utils:WrapRemover
 	@process.wrapRemover.wrapperClass = 'extra-wrapper-required-by-neos-backend'
 }
 
-prototype(M12.Foundation:BlockGridItem) < prototype(TYPO3.TypoScript:Tag) {
+prototype(M12.Foundation:BlockGridItem) < prototype(Neos.Fusion:Tag) {
 	tagName = 'li'
 
-	content = TYPO3.Neos:ContentCase
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+	content = Neos.Neos:ContentCase
+	@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 }

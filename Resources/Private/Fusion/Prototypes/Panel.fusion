@@ -6,5 +6,5 @@ prototype(M12.Foundation:Panel) < prototype(M12.Foundation:Content) {
 		appearance = ${q(node).property('classAppearance') ? q(node).property('classAppearance') : null}
 	}
 
-	panelContent = TYPO3.Neos:ContentCollectionRenderer
+	panelContent = Neos.Neos:ContentCollectionRenderer
 }

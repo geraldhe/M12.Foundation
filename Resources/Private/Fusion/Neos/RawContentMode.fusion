@@ -1,0 +1,7 @@
+# Neos.Neos:RawContent is a renderer for 'rawContent' page.
+# While in this context, inline styles should not be displayed.
+prototype(Neos.Neos:RawContent) {
+	prototype(Neos.Neos:Content) {
+		attributes.style >
+	}
+}

@@ -1,6 +1,6 @@
-# Override TYPO3.Neos:Menu
-prototype(M12.Foundation:Menu) < prototype(TYPO3.Neos.NodeTypes:Menu) {
-	@override.isDocumentContext = ${q(node).is('[instanceof TYPO3.Neos:Document]')}
+# Override Neos.Neos:Menu
+prototype(M12.Foundation:Menu) < prototype(Neos.Neos.NodeTypes:Menu) {
+	@override.isDocumentContext = ${q(node).is('[instanceof Neos.Neos:Document]')}
 
 	# magellanSupport can be set via @override in the parent scope.
 	# When in document context, use that variable - otherwise read node property.
@@ -77,10 +77,10 @@ prototype(M12.Foundation:NavItem) < prototype(M12.Foundation:Content) {
 		divider = ${q(node).property('classDivider') ? 'divider' : null}
 	}
 	attributesHref = ${q(node).property('htmlHref') ? String.trim(q(node).property('htmlHref')) : null}
-	attributesHref.@process.1 = TYPO3.Neos:ConvertUris
+	attributesHref.@process.1 = Neos.Neos:ConvertUris
 	attributesHref.@if.isFrontend = ${node.context.workspace.name == 'live'}
 
-	navItemContent = TYPO3.Neos:ContentCollectionRenderer
+	navItemContent = Neos.Neos:ContentCollectionRenderer
 
 	tag = ${this.isSubNav ? 'dd' : 'li'}
 }
@@ -95,7 +95,7 @@ prototype(M12.Foundation:SideNav) < prototype(M12.Foundation:Content) {
 		base = 'side-nav'
 	}
 
-	sideNavContent = TYPO3.Neos:ContentCollectionRenderer
+	sideNavContent = Neos.Neos:ContentCollectionRenderer
 }
 
 prototype(M12.Foundation:SubNav) < prototype(M12.Foundation:Content) {
@@ -110,5 +110,5 @@ prototype(M12.Foundation:SubNav) < prototype(M12.Foundation:Content) {
 
 	subNavTitle = ${q(node).property('title') ? q(node).property('title') : null}
 
-	subNavContent = TYPO3.Neos:ContentCollectionRenderer
+	subNavContent = Neos.Neos:ContentCollectionRenderer
 }

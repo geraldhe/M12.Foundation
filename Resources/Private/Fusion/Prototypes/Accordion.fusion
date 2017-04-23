@@ -4,7 +4,7 @@ prototype(M12.Foundation:Accordion) < prototype(M12.Foundation:Content) {
 	attributes.class.accordion = 'accordion'
 	attributes.data-accordion = ${q(node).property('accordionGroupName') ? q(node).property('accordionGroupName') : ''}
 
-	accordionItems = TYPO3.TypoScript:Collection {
+	accordionItems = Neos.Fusion:Collection {
 		collection = ${q(node).children('[instanceof M12.Foundation:AccordionItem]')}
 		itemRenderer = M12.Foundation:AccordionItem
 		itemName = 'node'
@@ -19,9 +19,9 @@ prototype(M12.Foundation:AccordionItem) < prototype(M12.Foundation:Content) {
 	# These attributes are added to li.accordion-navigation, 
 	# the parent element for div.content containing the accordion item content.
 	extraAttributes.class {
-		base = 'accordion-navigation'
-		active = 'active'
-		active.@if.isAccordionItemActive = ${q(node).property('isAccordionItemActive')}
+		base = 'accordion-item'
+		#active = 'is-active'
+		#active.@if.isAccordionItemActive = ${q(node).property('isAccordionItemActive')}
 		hideCcOverlay = 'neos-hide-empty-contentcollection-overlay'
 		hideCcOverlay.@if.isBackend = ${node.context.workspace.name != 'live'}
 	}
@@ -32,24 +32,25 @@ prototype(M12.Foundation:AccordionItem) < prototype(M12.Foundation:Content) {
 	# root element for accordion item. IMHO (ryzy) it makes more sense and it's more useful
 	# to apply it for div.content element.
 	attributes.id = ${q(node).property('customHtmlId') ? q(node).property('customHtmlId') : 'acc-'+q(node).property('_identifier')}
+	attributes.data-tab-content = ''
 	attributes.class {
 		contentcollection = 'neos-contentcollection'
 		contentcollection.@if.isBackend = ${node.context.workspace.name != 'live'}
-		base = 'content'
+		base = 'accordion-content'
 		active = ${q(node).property('isAccordionItemActive') ? 'active' : null}
 	}
 	@override.attributes = ${this.attributes}
 
 	accordionItemId = ${this.attributes.id}
 
-	accordionItemContent = TYPO3.TypoScript:Tag {
+	accordionItemContent = Neos.Fusion:Tag {
 		# These attributes are added to div.content, which contains the accordion item content.
 		attributes = ${attributes}
-		content = TYPO3.Neos:ContentCollectionRenderer
+		content = Neos.Neos:ContentCollectionRenderer
 		# Add additional wrapping to outer DIV, because otherwise
 		# CreateJS won't work. It requires elements of ContentCollection
 		# to be direct children of ContentCollection).
 		# TODO: Can be removed when createjs is dropped.
-		@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+		@process.contentElementWrapping = Neos.Neos:ContentElementWrapping
 	}
 }

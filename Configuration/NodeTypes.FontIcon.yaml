@@ -22,7 +22,7 @@
         inspector:
           group: 'fontIconOptions'
           position: 10
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             dataSourceIdentifier: 'font-icon-list'
             allowEmpty: TRUE
@@ -35,7 +35,7 @@
         inspector:
           group: 'fontIconOptions'
           position: 20
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Icon options'
             values:
@@ -94,10 +94,13 @@
           editorOptions:
             placeholder: 'e.g. padding-right: 5px;'
 
+'M12.Foundation:FontIconAbstract':
+  superTypes:
+    'M12.Foundation:AbstractFontIcon': TRUE
 
 'M12.Foundation:FontIcon':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:AbstractFontIcon': TRUE
     'M12.Foundation:AbstractNodeTitle': TRUE
     'M12.Foundation:AbstractTitleTooltip': TRUE

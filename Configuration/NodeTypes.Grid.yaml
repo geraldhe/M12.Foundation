@@ -5,8 +5,8 @@
 #
 'M12.Foundation:GridColumn':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:AbstractDevCustomTag': TRUE
     'M12.Foundation:AbstractSectionIdMagellan': TRUE
     'M12.Foundation:AbstractNodeTitle': TRUE
@@ -40,7 +40,7 @@
 # Abstract NodeType for all M12.Foundation:GridColumnsX
 'M12.Foundation:GridRowAbstract':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:AbstractDevCustomTag': TRUE
     'M12.Foundation:AbstractSectionIdMagellan': TRUE
     'M12.Foundation:AbstractNodeTitle': TRUE
@@ -73,7 +73,7 @@
   constraints:
     nodeTypes:
       'M12.Foundation:GridColumn': TRUE
-      'TYPO3.Neos.NodeTypes:ContentReferences': TRUE # So we can reference to other grid column via Content References node
+      'Neos.Neos.NodeTypes:ContentReferences': TRUE # So we can reference to other grid column via Content References node
       'M12.Foundation:FormLabel': TRUE # FormLabel can be inserted before columns (see Foundation doc)
       '*': FALSE
   properties:

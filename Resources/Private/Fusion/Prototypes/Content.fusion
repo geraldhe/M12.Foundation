@@ -1,6 +1,6 @@
 #
 # M12.Foundation:Content is a base for all M12.Foundation:* components.
 # Add here properties/functionality which you don't want to add
-# to default TYPO3.Neos:Content.
+# to default Neos.Neos:Content.
 #
-prototype(M12.Foundation:Content) < prototype(TYPO3.Neos:Content)
+prototype(M12.Foundation:Content) < prototype(Neos.Neos:Content)

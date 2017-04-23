@@ -22,7 +22,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'dropdownOptions'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Default (Tiny)'
             allowEmpty: TRUE
@@ -53,7 +53,7 @@
 # Dropdown that can handle list of links only.
 'M12.Foundation:Dropdown':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:DropdownAbstract': TRUE
   ui:
     label: 'Dropdown: Links'
@@ -101,8 +101,8 @@
 # Dropdown that can handle custom content.
 'M12.Foundation:DropdownContent':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:DropdownAbstract': TRUE
   ui:
     label: 'Dropdown: Any Content'

@@ -11,7 +11,7 @@ namespace M12\Foundation\Fluid\Core\ViewHelper;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * Modifies globally how TagBuilder behaves for NULL attributes.
@@ -19,7 +19,7 @@ use TYPO3\Flow\Annotations as Flow;
  * - we don't want any attributes to render at all if the value
  * was set to NULL or FALSE.
  *
- * @see \TYPO3\Fluid\Core\ViewHelper\TagBuilder
+ * @see \Neos\Fluid\Core\ViewHelper\TagBuilder
  * @see \M12\Foundation\TypoScript\AttributesImplementation
  *
  * @Flow\Aspect
@@ -33,13 +33,13 @@ class TagBuilderAspect
      * Otherwise addAttribute() method is called as usually.
      *
      * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
-     * @Flow\Around("method(TYPO3\Fluid\Core\ViewHelper\TagBuilder->addAttribute())")
+     * @Flow\Around("method(Neos\Fluid\Core\ViewHelper\TagBuilder->addAttribute())")
      * @return void
      */
-    public function catchAddAttribute(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint)
+    public function catchAddAttribute(\Neos\Flow\Aop\JoinPointInterface $joinPoint)
     {
         if (null === $joinPoint->getMethodArgument('attributeValue') || false === $joinPoint->getMethodArgument('attributeValue')) {
-            /** @var \TYPO3\Fluid\Core\ViewHelper\TagBuilder $tagBuilder */
+            /** @var \Neos\Fluid\Core\ViewHelper\TagBuilder $tagBuilder */
             $tagBuilder = $joinPoint->getProxy();
             $tagBuilder->removeAttribute($joinPoint->getMethodArgument('attributeName'));
         } else {

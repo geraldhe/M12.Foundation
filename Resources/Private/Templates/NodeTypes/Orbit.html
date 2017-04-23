@@ -1,10 +1,12 @@
-{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace neos=Neos.Neos\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
 
 <!-- Slider root container -->
 <f:section name="sliderRoot">
 	<div class="extra-wrapper-required-by-neos-backend">
 		<f:render partial="Anchor" arguments="{_all}" />
+	<div class="orbit" role="region" data-orbit>
 		{orbitContent -> f:format.raw()}
+	</div>
 	</div>
 </f:section>

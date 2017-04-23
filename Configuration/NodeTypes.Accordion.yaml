@@ -15,7 +15,7 @@
 
 'M12.Foundation:Accordion':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:AccordionAbstract': TRUE
   ui:
     label: 'Accordion'
@@ -54,8 +54,8 @@
 
 'M12.Foundation:AccordionItem':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:AccordionAbstract': TRUE
   ui:
     label: 'Accordion Item'

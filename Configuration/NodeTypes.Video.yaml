@@ -1,6 +1,6 @@
 'M12.Foundation:Video':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:AbstractBackgroundImage': TRUE
   ui:
     label: Flex Video
@@ -21,7 +21,7 @@
           editorOptions:
             placeholder: 'Video ID from the video URL address...'
       validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        'Neos.Neos/Validation/StringLengthValidator':
           minimum: 1
           maximum: 32
         regularExpression:
@@ -33,7 +33,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'video'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               '':
@@ -65,7 +65,7 @@
         reloadIfChanged: FALSE
         inspector:
           group: 'video'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               widescreen:

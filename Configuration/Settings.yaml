@@ -1,12 +1,12 @@
-TYPO3:
-  TypoScript:
+Neos:
+  Fusion:
     defaultContext:
       'M12.Foundation.Spacing': 'M12\Foundation\Eel\SpacingHelper'
 
   Neos:
-    typoScript:
+    fusion:
       autoInclude:
-        'M12.Foundation': TRUE
+        M12.Foundation: TRUE
 
 #    userInterface:
 #      requireJsPathMapping:
@@ -170,43 +170,43 @@ M12:
       # Alert: add Text node inside
       'M12.Foundation:Alert':
         childNodes:
-          - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+          - nodeType: 'Neos.Neos.NodeTypes:Text'
             properties:
               text: 'This is a sample alert text.'
       # GridColumn: add Text node inside with sample content
       'M12.Foundation:GridColumn':
         childNodes:
-          - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+          - nodeType: 'Neos.Neos.NodeTypes:Text'
             properties:
               text: 'Column %s content'
       # Panel: add sample Text node inside
       'M12.Foundation:Panel':
         childNodes:
-          - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+          - nodeType: 'Neos.Neos.NodeTypes:Text'
             properties:
               text: '<h4>This is a panel title</h4><p>This is a sample panel content.</p>'
       # Orbit slider: add images inside
       'M12.Foundation:Orbit':
         childNodes:
-          - nodeType: 'TYPO3.Neos.NodeTypes:Image'
+          - nodeType: 'Neos.Neos.NodeTypes:Image'
             properties:
               hasCaption: TRUE
               caption: "Slide 1 caption"
-          - nodeType: 'TYPO3.Neos.NodeTypes:Image'
+          - nodeType: 'Neos.Neos.NodeTypes:Image'
             properties:
               hasCaption: TRUE
               caption: "Slide 2 caption"
-          - nodeType: 'TYPO3.Neos.NodeTypes:Image'
+          - nodeType: 'Neos.Neos.NodeTypes:Image'
             properties:
               hasCaption: TRUE
               caption: "Slide 3 caption"
       # Reveal Modal: add sample content inside + insert Button before and link it with modal element (linking done in the code)
       'M12.Foundation:RevealModal':
         childNodes:
-          - nodeType: 'TYPO3.Neos.NodeTypes:Headline'
+          - nodeType: 'Neos.Neos.NodeTypes:Headline'
             properties:
               title: '<h1>Modal window</h1>'
-          - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+          - nodeType: 'Neos.Neos.NodeTypes:Text'
             properties:
               text: 'Sample modal content.'
         beforeNodes:
@@ -240,18 +240,18 @@ M12:
             properties:
               label: 'Show dropdown'
         childNodes:
-          - nodeType: 'TYPO3.Neos.NodeTypes:Headline'
+          - nodeType: 'Neos.Neos.NodeTypes:Headline'
             properties:
               title: '<h1>Dropdown content</h1>'
-          - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+          - nodeType: 'Neos.Neos.NodeTypes:Text'
             properties:
               text: 'Sample dropdown content.'
       # Block grid: add sample content inside, so it's obvious how it works out of the box
       'M12.Foundation:BlockGrid':
         childNodes:
-          - nodeType: 'TYPO3.Neos.NodeTypes:Image'
-          - nodeType: 'TYPO3.Neos.NodeTypes:Image'
-          - nodeType: 'TYPO3.Neos.NodeTypes:Image'
+          - nodeType: 'Neos.Neos.NodeTypes:Image'
+          - nodeType: 'Neos.Neos.NodeTypes:Image'
+          - nodeType: 'Neos.Neos.NodeTypes:Image'
       # Form: demonstrate sample form.
       'M12.Foundation:Form':
         childNodes:
@@ -465,7 +465,7 @@ M12:
       # Accordion item: add sample text inside
       'M12.Foundation:AccordionItem':
         childNodes:
-          - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+          - nodeType: 'Neos.Neos.NodeTypes:Text'
             properties:
               text: 'Sample accordion item content.'
       # Accordion: add accordion items, configure the 1st one as active
@@ -489,20 +489,20 @@ M12:
               title: 'Tab 1'
               activeTab: TRUE
             childNodes:
-              - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+              - nodeType: 'Neos.Neos.NodeTypes:Text'
                 properties:
                   text: '<h4>Tab panel 1</h4><p>This is a sample tab 1 content.</p>'
           - nodeType: 'M12.Foundation:TabItem'
             properties:
               title: 'Tab 2'
             childNodes:
-              - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+              - nodeType: 'Neos.Neos.NodeTypes:Text'
                 properties:
                   text: '<h4>Tab panel 2</h4><p>This is a sample tab 2 content.</p>'
           - nodeType: 'M12.Foundation:TabItem'
             properties:
               title: 'Tab 3'
             childNodes:
-              - nodeType: 'TYPO3.Neos.NodeTypes:Text'
+              - nodeType: 'Neos.Neos.NodeTypes:Text'
                 properties:
                   text: '<h4>Tab panel 3</h4><p>This is a sample tab 3 content.</p>'

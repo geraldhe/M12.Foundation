@@ -1,13 +1,13 @@
-{namespace ts=TYPO3\TypoScript\ViewHelpers}
-{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace ts=Neos\Fusion\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
 
 <ul{attributes -> f:format.raw()}>
 	<ts:render path="accordionItems" />
 </ul>
 
 <f:section name="AccordionItem">
-	<li{extraAttributes -> f:format.raw()}>
-		<a href="#{accordionItemId}">{neos:contentElement.editable(property: 'accordionItemLabel')}</a>
+	<li{extraAttributes -> f:format.raw()} data-accordion-item>
+		<a class="accordion-title" href="#{accordionItemId}">{neos:contentElement.editable(property: 'accordionItemLabel')}</a>
 		<ts:render path="accordionItemContent" />
 	</li>
 </f:section>

@@ -6,5 +6,5 @@ prototype(M12.Foundation:RevealModal) < prototype(M12.Foundation:Content) {
 		size = ${q(node).property('classRevealSize') ? q(node).property('classRevealSize') : null}
 	}
 
-	revealModalContent = TYPO3.Neos:ContentCollectionRenderer
+	revealModalContent = Neos.Neos:ContentCollectionRenderer
 }

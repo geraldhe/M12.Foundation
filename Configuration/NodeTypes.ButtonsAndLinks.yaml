@@ -6,7 +6,7 @@
 'M12.Foundation:ButtonLinkAbstract':
   abstract: TRUE
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:AbstractSectionIdMagellan': TRUE
     'M12.Foundation:AbstractFontIcon': TRUE
     'M12.Foundation:AbstractTitleTooltip': TRUE
@@ -79,7 +79,7 @@
         inspector:
           group: 'linkOptions'
           position: 20
-          editor: TYPO3.Neos/Inspector/Editors/LinkEditor
+          editor: Neos.Neos/Inspector/Editors/LinkEditor
           editorOptions:
             placeholder: 'Page name or external URL...'
     htmlTargetBlank:
@@ -90,7 +90,7 @@
         inspector:
           group: 'linkOptions'
           position: 30
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'No'
             allowEmpty: TRUE
@@ -159,7 +159,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'revDropOptions'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Default / Bottom'
             allowEmpty: TRUE
@@ -214,7 +214,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'buttonOptions'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Button options'
             values:
@@ -276,7 +276,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'buttonOptions'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             placeholder: 'Button type'
             allowEmpty: TRUE
@@ -301,8 +301,8 @@
 # Button Group (list of buttons)
 'M12.Foundation:ButtonGroup':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
   ui:
     label: 'Button Group'
     help:
@@ -323,7 +323,7 @@
 # Button Bar (group of button groups)
 'M12.Foundation:ButtonBar':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
   ui:
     label: 'Button Bar'
     help:

@@ -1,9 +1,9 @@
 <?php
 namespace M12\Foundation\DataSource;
 
-use TYPO3\Neos\Service\DataSource\AbstractDataSource;
-use TYPO3\TYPO3CR\Domain\Model\NodeInterface;
-use TYPO3\Flow\Cache\CacheManager;
+use Neos\Neos\Service\DataSource\AbstractDataSource;
+use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\Flow\Cache\CacheManager;
 
 /**
  * Class FontIconDataSource provides data for field 'faName'

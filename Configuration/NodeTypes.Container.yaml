@@ -1,7 +1,7 @@
 'M12.Foundation:Container':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:AbstractDevCustomTag': TRUE
     'M12.Foundation:AbstractFontIcon': TRUE
     'M12.Foundation:AbstractSectionIdMagellan': TRUE

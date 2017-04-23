@@ -49,7 +49,7 @@ test:
         "
     - docker logs -f neos > ${CIRCLE_ARTIFACTS}/docker-neos.log 2>&1:
         background: true
-    # Wait till TYPO3 Neos is fully configured
+    # Wait till Neos.Neos is fully configured
     - while true; do if grep "nginx entered RUNNING state" ${CIRCLE_ARTIFACTS}/docker-neos.log; then break; else sleep 1; fi done
     
     # Test: do basic front-end tests 

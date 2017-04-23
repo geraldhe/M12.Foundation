@@ -11,8 +11,8 @@ namespace M12\Foundation;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\Flow\Package\Package as BasePackage;
-use TYPO3\Flow\Core\Bootstrap;
+use Neos\Flow\Package\Package as BasePackage;
+use Neos\Flow\Core\Bootstrap;
 
 /**
  * The M12.Foundation Package
@@ -29,7 +29,7 @@ class Package extends BasePackage
     public function boot(Bootstrap $bootstrap)
     {
         $dispatcher = $bootstrap->getSignalSlotDispatcher();
-        $dispatcher->connect('TYPO3\TYPO3CR\Domain\Model\Node', 'afterNodeCreate',
+        $dispatcher->connect('Neos\ContentRepository\Domain\Model\Node', 'afterNodeCreate',
             'M12\Foundation\Node\NodeConfigurator', 'afterNodeCreate');
     }
 }

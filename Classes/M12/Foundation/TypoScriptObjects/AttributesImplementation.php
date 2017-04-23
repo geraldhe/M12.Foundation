@@ -1,4 +1,5 @@
 <?php
+
 namespace M12\Foundation\TypoScriptObjects;
 
 /*                                                                        *
@@ -11,8 +12,8 @@ namespace M12\Foundation\TypoScriptObjects;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\TypoScript\TypoScriptObjects\AttributesImplementation as TypoScriptAttributesImplementation;
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Fusion\FusionObjects\AttributesImplementation as FusionAttributesImplementation;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * {@inheritdoc}
@@ -26,7 +27,7 @@ use TYPO3\Flow\Annotations as Flow;
  * needed when you want to pass arbitrary attributes to some view helpers
  * additionalAttributes param (e.g. f:form).
  */
-class AttributesImplementation extends TypoScriptAttributesImplementation
+class AttributesImplementation extends FusionAttributesImplementation
 {
 
     /**
@@ -60,7 +61,7 @@ class AttributesImplementation extends TypoScriptAttributesImplementation
             }
 
             $encodedAttributeName = htmlspecialchars($attributeName, ENT_COMPAT, 'UTF-8', false);
-            $attributeValue = $this->tsValue($attributeName);
+            $attributeValue = $this->fusionValue($attributeName);
 
             if ($attributeValue === null || $attributeValue === false) {
                 // No op
@@ -96,7 +97,7 @@ class AttributesImplementation extends TypoScriptAttributesImplementation
      */
     protected function parseCustomUserAttributes()
     {
-        if (($value = trim($this->tsValue(static::CUSTOM_USER_ATTRIBUTES_KEY)))) {
+        if (($value = trim($this->fusionValue(static::CUSTOM_USER_ATTRIBUTES_KEY)))) {
             $customUserAttributes = explode(chr(10), $value);
             foreach ($customUserAttributes as $line) {
                 if (empty($line)) {
@@ -110,7 +111,7 @@ class AttributesImplementation extends TypoScriptAttributesImplementation
                 // First: mark existence of custom attribute
                 // Second: add it to internal tsValueCache[], so $this->tsValue() can fetch it without evaluating.
                 $this->properties[$attributeName] = $attributeValue;
-                $this->tsValueCache[$this->path . '/' . $attributeName] = $attributeValue;
+                $this->fusionValueCache[$this->path . '/' . $attributeName] = $attributeValue;
             }
 
             // unset original custom attribute

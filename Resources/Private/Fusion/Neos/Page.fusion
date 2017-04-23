@@ -1,14 +1,14 @@
 # Add `pageLayout` property to context, so we don't need to determine over and over again
 root.layout.@override.pageLayout = ${this.layout}
 
-prototype(TYPO3.Neos:Page) {
+prototype(Neos.Neos:Page) {
 	# Define short nodeType name (without package prefix)
 	@override.nodeTypeShort = ${String.toLowerCase(String.substr(q(node).property('_nodeType.name'), 1+String.lastIndexOf(q(node).property('_nodeType.name'), ':')))}
 
 	bodyTag {
 		# Add custom properties/attributes from M12.Foundation:AbstractDevBase
-		attributes = TYPO3.TypoScript:Attributes {
-			class = TYPO3.TypoScript:RawArray {
+		attributes = Neos.Fusion:Attributes {
+			class = Neos.Fusion:RawArray {
 				nodeTypeShort = ${nodeTypeShort}
 				layout = ${pageLayout ? 'layout-'+pageLayout : 'layout-default'}
 				customLook = ${q(node).property('customLook') ? q(node).property('customLook')+' '+nodeTypeShort+'-'+q(node).property('customLook') : null}
@@ -22,7 +22,7 @@ prototype(TYPO3.Neos:Page) {
 	body {
 		# Append custom CSS, inline, to stylesheets section
 		# Note: it's rendered in reversed order... so 1st global site code, then local from this page.
-		@override.customCssCode = TYPO3.TypoScript:Array {
+		@override.customCssCode = Neos.Fusion:Array {
 			1 = ${q(site).property('customCssCode')}
 			2 = ${q(site).property('_nodeData.path') != q(node).property('_nodeData.path') ? q(node).property('customCssCode') : null}
 			@process.wrap = ${value ? '<style type="text/css">' + value + '</style>' : null}
@@ -31,7 +31,7 @@ prototype(TYPO3.Neos:Page) {
 
 		# Append custom JS, inline, to scripts section
 		# Note: it's rendered in reversed order... so 1st global site code, then local from this page.
-		@override.customJsCode = TYPO3.TypoScript:Array {
+		@override.customJsCode = Neos.Fusion:Array {
 			1 = ${q(site).property('customJsCode')}
 			2 = ${q(site).property('_nodeData.path') != q(node).property('_nodeData.path') ? q(node).property('customJsCode') : null}
 			@process.wrap = ${value ? '<script type="text/javascript">' + value + '</script>' : null}

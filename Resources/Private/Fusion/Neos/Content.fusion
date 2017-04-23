@@ -1,19 +1,19 @@
-prototype(TYPO3.Neos:Content) {
+prototype(Neos.Neos:Content) {
 	# remove default Neos class processing
 	attributes.class.@process.nodeType >
 
 	# Define short nodeType name (without package prefix)
 	@context.nodeTypeShort = ${String.toLowerCase(String.substr(q(node).property('_nodeType.name'), 1+String.lastIndexOf(q(node).property('_nodeType.name'), ':')))}
 
-	@context.backgroundImageUri = TYPO3.Neos:ImageUri {
+	@context.backgroundImageUri = Neos.Neos:ImageUri {
 		@if.backgroundImagePresent = ${q(node).property('backgroundImage') ? true : false}
 		asset = ${q(node).property('backgroundImage')}
 		maximumWidth = 2560
 		maximumHeight = 2560
 	}
 
-	attributes.class = TYPO3.TypoScript:RawArray {
-		# Copied from original TYPO3.Neos:Content - adds class with Neos node-type
+	attributes.class = Neos.Fusion:RawArray {
+		# Copied from original Neos.Neos:Content - adds class with Neos node-type
 		nodeType = ${String.trim(String.toLowerCase(String.pregReplace(q(node).property('_nodeType.name'), '/[[:^alnum:]]/', '-')))}
 		nodeType.@position = 'start'
 
@@ -55,7 +55,7 @@ prototype(TYPO3.Neos:Content) {
 	}
 
 	# Some Zurb Components use 'data-options' attribute. Define it here. Add common options.
-	attributes.data-options = TYPO3.TypoScript:Array {
+	attributes.data-options = Neos.Fusion:Array {
 		tooltipOptions = ${q(node).property('tooltipOptions') ? Array.join(q(node).property('tooltipOptions'), '; ') : null}
 		tooltipOptions.@if.tooltip = ${q(node).property('tooltip') && q(node).property('htmlTitle')}
 
@@ -100,8 +100,8 @@ prototype(TYPO3.Neos:Content) {
 	
 	# Prepare container for another/extra set of attributes - can be used for
 	# additional outer wrapper etc. Not harmful when not used and/or empty.
-	extraAttributes = TYPO3.TypoScript:Attributes {
-		class = TYPO3.TypoScript:RawArray
+	extraAttributes = Neos.Fusion:Attributes {
+		class = Neos.Fusion:RawArray
 		# Nullify class if it's empty - so then it's not rendered *at all*.
 		# It's important to have it as NULL as we might check in the template if
 		# extraAttributes exists and if so, extra wrapper or attribute might be rendered.
@@ -117,5 +117,5 @@ prototype(TYPO3.Neos:Content) {
 
 	# Support for font icon in all content types
 	# Or shall it be included on per-content basis, only where necessary?
-	fontIcon = M12.Foundation:FontIconAbstract
+	# fontIcon = M12.Foundation:FontIconAbstract
 }

@@ -1,7 +1,7 @@
 <?php
 namespace M12\Foundation\TypoScript;
 
-use TYPO3\TypoScript\TypoScriptObjects\RawArrayImplementation;
+use Neos\Fusion\FusionObjects\RawArrayImplementation;
 
 /**
  * Class ValueOptionsListImplementation

@@ -11,7 +11,7 @@ namespace M12\Foundation\ViewHelpers;
  * The TYPO3 project - inspiring people to share!                         *
  *                                                                        */
 
-use TYPO3\Flow\Annotations as Flow;
+use Neos\Flow\Annotations as Flow;
 
 /**
  * @Flow\Aspect
@@ -23,11 +23,11 @@ class ContentElementEditableViewHelperAspect
      * Strip off <div>...</div> inside Neos inline editable properties
      * when not in back-end editing workspace.
      *
-     * @param \TYPO3\Flow\Aop\JoinPointInterface $joinPoint
-     * @Flow\Around("method(TYPO3\Neos\ViewHelpers\ContentElement\EditableViewHelper->render())")
+     * @param \Neos\Flow\Aop\JoinPointInterface $joinPoint
+     * @Flow\Around("method(Neos\Neos\ViewHelpers\ContentElement\EditableViewHelper->render())")
      * @return string
      */
-    public function catchRender(\TYPO3\Flow\Aop\JoinPointInterface $joinPoint)
+    public function catchRender(\Neos\Flow\Aop\JoinPointInterface $joinPoint)
     {
         // get original output
         $res = $joinPoint->getAdviceChain()->proceed($joinPoint);

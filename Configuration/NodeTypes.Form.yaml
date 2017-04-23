@@ -7,8 +7,8 @@
 # <form> element.
 'M12.Foundation:Form':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:AbstractSectionIdMagellan': TRUE
     'M12.Foundation:AbstractNodeTitle': TRUE
     'M12.Foundation:AbstractBackgroundImage': TRUE
@@ -40,7 +40,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formSettings'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               post:
@@ -53,7 +53,7 @@
 'M12.Foundation:FormElementAbstract':
   abstract: TRUE
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:AbstractNodeTitle': TRUE
     'M12.Foundation:AbstractTitleTooltip': TRUE
     'M12.Foundation:AbstractBackgroundImage': TRUE
@@ -253,8 +253,8 @@
 # Fieldset.
 'M12.Foundation:FormFieldset':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-    'TYPO3.Neos:ContentCollection': TRUE
+    'Neos.Neos:Content': TRUE
+    'Neos.Neos:ContentCollection': TRUE
     'M12.Foundation:AbstractNodeTitle': TRUE
     'M12.Foundation:AbstractBackgroundImage': TRUE
   ui:
@@ -289,7 +289,7 @@
 # <label> element.
 'M12.Foundation:FormLabel':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:FormInputLabelAbstract': TRUE
     'M12.Foundation:AbstractTitleTooltip': TRUE
   ui:
@@ -335,7 +335,7 @@
         inspector:
           group: 'na'
     # Hide custom css class / inline code - this is main LABEL element, therefore
-    # properties available in TYPO3.Neos:Content (inherited from M12.Foundation:AbstractDevBase)
+    # properties available in Neos.Neos:Content (inherited from M12.Foundation:AbstractDevBase)
     # should be used.
     labelCssClass:
       ui:
@@ -380,7 +380,7 @@
         inspector:
           group: 'formInputSettings'
           position: 5
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               text:
@@ -415,7 +415,7 @@
 # Pre/postfix element.
 'M12.Foundation:FormInputPrePostfix':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
+    'Neos.Neos:Content': TRUE
     'M12.Foundation:AbstractDevCustomTag': TRUE
   ui:
     label: 'Pre/Postfix Label'
@@ -454,7 +454,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editor: Neos.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
               prefix:
@@ -529,7 +529,7 @@
         reloadIfChanged: TRUE
         inspector:
           group: 'formInputSettings'
-          editor: TYPO3.Neos/Inspector/Editors/TextAreaEditor
+          editor: Neos.Neos/Inspector/Editors/TextAreaEditor
           editorOptions:
             placeholder: |
               e.g.: value = Label
