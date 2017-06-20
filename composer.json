@@ -9,9 +9,7 @@
         { "name": "Dmitri Pisarev", "role": "Developer", "email": "dimaip@gmail.com", "homepage": "http://dimaip.github.io/" }
     ],
     "require": {
-        "typo3/neos": "~3.1",
-        "typo3/neos-nodetypes": "~2.1",
-        "m12/neos-utils": "*"
+        "typo3/neos": "3.*"
     },
     "conflict": {
         "typo3/neosdemotypo3org": "*"
