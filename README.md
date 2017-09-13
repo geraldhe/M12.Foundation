@@ -1,7 +1,7 @@
 # M12.Foundation: Zurb Foundation components for Neos CMS
 [![Circle CI](https://circleci.com/gh/million12/M12.Foundation.svg?style=svg)](https://circleci.com/gh/million12/M12.Foundation)
 
-M12.Foundation aims to implement majority of [Zurb Foundation](http://foundation.zurb.com/) (v5) components, in the best possible way, inside [Neos CMS](http://neos.io/).
+M12.Foundation aims to implement majority of [Zurb Foundation](http://foundation.zurb.com/) (v6) components, in the best possible way, inside [Neos CMS](http://neos.io/).
 
 # Features
 
