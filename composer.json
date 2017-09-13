@@ -1,6 +1,6 @@
 {
     "name": "m12/neos-foundation-test",
-    "type": "typo3-flow-plugin",
+    "type": "neos-plugin",
     "description": "Foundation content elements",
     "license": ["MIT"],
     "authors": [
