@@ -9,7 +9,7 @@
         { "name": "Dmitri Pisarev", "role": "Developer", "email": "dimaip@gmail.com", "homepage": "http://dimaip.github.io/" }
     ],
     "require": {
-        "typo3/neos": "3.*"
+        "neos/neos": "~4.*"
     },
     "conflict": {
         "typo3/neosdemotypo3org": "*"
